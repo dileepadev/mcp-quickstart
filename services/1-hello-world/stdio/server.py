@@ -1,9 +1,6 @@
 import logging
 import sys
-
-# This refers to the official MCP Python SDK implementation: from mcp.server.fastmcp import FastMCP
-# This imports the standalone FastMCP library, version 2.x.: from fastmcp import FastMCP
-from fastmcp import FastMCP
+from fastmcp import FastMCP  # Official MCP SDK import
 
 # Configure logging
 logging.basicConfig(
@@ -16,23 +13,51 @@ logging.basicConfig(
 mcp = FastMCP("hello_server")
 logging.info("✨ Server instance initialized!")
 
-# Resource
+
 @mcp.resource("hello://world")
 def hello_world_resource() -> str:
+    """
+    hello_world_resource()
+
+    MCP Resource:
+    URI: hello://world
+
+    Returns:
+        A greeting string "Hello, World!" when the resource is requested.
+    """
     logging.info("🌍 Resource accessed: hello://world")
     return "Hello, World!"
 
-# Tool
+
 @mcp.tool()
 def display_hello_world() -> dict:
+    """
+    display_hello_world()
+
+    MCP Tool:
+    Returns a JSON-like dict containing a greeting message.
+
+    Returns:
+        dict: {"result": "Hello, World!"}
+    """
     logging.info("👋 Tool called: display_hello_world()")
     return {"result": "Hello, World!"}
 
-# Prompt
+
 @mcp.prompt()
 def prompt_hello_world() -> str:
+    """
+    prompt_hello_world()
+
+    MCP Prompt:
+    Generates a user-facing prompt message.
+
+    Returns:
+        str: A friendly greeting prompt string.
+    """
     logging.info("💬 Prompt generated: prompt_hello_world()")
     return "Sure! Here's your message: Hello, World!"
+
 
 if __name__ == "__main__":
     try:
