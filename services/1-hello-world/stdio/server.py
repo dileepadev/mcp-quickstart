@@ -1,6 +1,8 @@
 import logging
 import sys
-from fastmcp import FastMCP  # Official MCP SDK import
+# This refers to the official MCP Python SDK implementation: from mcp.server.fastmcp import FastMCP
+# This imports the standalone FastMCP library, version 2.x.: from fastmcp import FastMCP
+from fastmcp import FastMCP
 
 # Configure logging
 logging.basicConfig(
