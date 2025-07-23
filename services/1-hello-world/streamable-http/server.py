@@ -18,19 +18,19 @@ logging.info("✨ Server instance initialized!")
 @mcp.resource("hello://world")
 def hello_world_resource() -> str:
     """Return a simple greeting."""
-    logging.info("🌍 Resource accessed: hello://world")
+    logging.info("📚 Resource accessed: hello://world")
     return "Hello, World!"
 
 @mcp.tool()
 def display_hello_world() -> dict:
     """Return greeting as a JSON-like dict."""
-    logging.info("👋 Tool called: display_hello_world()")
+    logging.info("🛠️ Tool called: display_hello_world()")
     return {"result": "Hello, World!"}
 
 @mcp.prompt()
 def prompt_hello_world() -> str:
     """Generate a friendly prompt greeting."""
-    logging.info("💬 Prompt generated: prompt_hello_world()")
+    logging.info("📝 Prompt generated: prompt_hello_world()")
     return "Sure! Here's your message: Hello, World!"
 
 if __name__ == "__main__":

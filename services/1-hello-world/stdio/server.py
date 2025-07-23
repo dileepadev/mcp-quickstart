@@ -27,7 +27,7 @@ def hello_world_resource() -> str:
     Returns:
         A greeting string "Hello, World!" when the resource is requested.
     """
-    logging.info("🌍 Resource accessed: hello://world")
+    logging.info("📚 Resource accessed: hello://world")
     return "Hello, World!"
 
 
@@ -42,7 +42,7 @@ def display_hello_world() -> dict:
     Returns:
         dict: {"result": "Hello, World!"}
     """
-    logging.info("👋 Tool called: display_hello_world()")
+    logging.info("🛠️ Tool called: display_hello_world()")
     return {"result": "Hello, World!"}
 
 
@@ -57,7 +57,7 @@ def prompt_hello_world() -> str:
     Returns:
         str: A friendly greeting prompt string.
     """
-    logging.info("💬 Prompt generated: prompt_hello_world()")
+    logging.info("📝 Prompt generated: prompt_hello_world()")
     return "Sure! Here's your message: Hello, World!"
 
 
