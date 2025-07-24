@@ -1,0 +1,1 @@
+inventory: dict[str, int] = {}
