@@ -7,6 +7,7 @@ import tools.update_item as t3
 import tools.delete_item as t4
 import tools.list_items as t5
 import tools.get_inventory_stats as t6
+import resources
 
 logging.basicConfig(
     level=logging.INFO,
@@ -24,6 +25,7 @@ t3.register(mcp)
 t4.register(mcp)
 t5.register(mcp)
 t6.register(mcp)
+resources.register_all(mcp)
 
 
 if __name__ == "__main__":
