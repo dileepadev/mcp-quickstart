@@ -6,7 +6,7 @@ from datetime import datetime
 
 def register(mcp):
     @mcp.resource("inventory://metadata")
-    async def get_inventory_metadata(ctx: Context) -> dict:
+    async def inventory_metadata(ctx: Context) -> dict:
         """
         Provide metadata about the inventory system.
 

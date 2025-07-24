@@ -33,7 +33,7 @@ details = {
 
 def register(mcp):
     @mcp.resource("company://details")
-    async def get_company_details(ctx: Context) -> dict:
+    async def company_details(ctx: Context) -> dict:
         """
         Provide company information for the inventory system.
 
