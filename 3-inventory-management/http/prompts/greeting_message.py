@@ -14,6 +14,6 @@ def register(mcp):
         Returns:
             str: A greeting message.
         """
-        logging.info("📝 Prompt generated: greeting_message")
-        await ctx.info("📝 Prompt generated: greeting_message")
+        logging.info("📝 Prompt called: greeting_message")
+        await ctx.info("📝 Prompt called: greeting_message")
         return f"Hello {user_name}! 👋 Welcome to the Inventory Management system. How can I assist you today?"

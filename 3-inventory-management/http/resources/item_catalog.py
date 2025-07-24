@@ -15,6 +15,6 @@ def register(mcp):
         Returns:
             dict: A dictionary mapping laptop codes to laptop brand/model names.
         """
-        logging.info("🛠️ Resource called: item_catalog",)
-        await ctx.info("🛠️ Resource called: item_catalog",)
+        logging.info("📚 Resource called: item_catalog",)
+        await ctx.info("📚 Resource called: item_catalog",)
         return {"action": "catalog", "items": catalog}

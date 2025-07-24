@@ -43,6 +43,6 @@ def register(mcp):
         Returns:
             dict: Company details including name, address, contact info.
         """
-        logging.info("🌐 Resource called: get_company_details")
-        await ctx.info("🌐 Resource called: get_company_details")
+        logging.info("📚 Resource called: get_company_details")
+        await ctx.info("📚 Resource called: get_company_details")
         return details
