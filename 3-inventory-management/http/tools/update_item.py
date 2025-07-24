@@ -1,3 +1,4 @@
+import logging
 from fastmcp import Context
 from tools.state import inventory
 from resources.catalog import catalog
@@ -18,14 +19,18 @@ def register(mcp):
         Raises:
             ValueError: If item does not exist.
         """
+        logging.info("🛠️ Tool called: update_item")
         await ctx.info("🛠️ Tool called: update_item")
         if code not in catalog:
+            logging.error(f"Code '{code}' is not valid in catalog")
             await ctx.error(f"Code '{code}' is not valid in catalog")
             raise ValueError({"error": "Invalid code", "code": code})
         if code not in inventory:
+            logging.error(f"Cannot update. Item '{code}' not found")
             await ctx.error(f"Cannot update. Item '{code}' not found")
             raise ValueError(
                 {"error": "Cannot update. Item not found", "code": code})
         inventory[code] = qty
+        logging.info(f"Updated item '{code}' to qty {qty}")
         await ctx.info(f"Updated item '{code}' to qty {qty}")
         return {"action": "update", "code": code, "qty": qty}

@@ -1,3 +1,4 @@
+import logging
 from fastmcp import Context
 from tools.state import inventory
 from resources.catalog import catalog
@@ -18,13 +19,17 @@ def register(mcp):
         Raises:
             ValueError: If item already exists.
         """
+        logging.info("🛠️ Tool called: list_items")
         await ctx.info("🛠️ Tool called: create_item")
         if code not in catalog:
+            logging.error(f"Code '{code}' is not valid in catalog")
             await ctx.error(f"Code '{code}' is not valid in catalog")
             raise ValueError({"error": "Invalid code", "code": code})
         if code in inventory:
+            logging.error(f"Item '{code}' already exists")
             await ctx.error(f"Item '{code}' already exists")
             raise ValueError({"error": "Item already exists", "code": code})
         inventory[code] = qty
+        logging.info(f"Created item '{code}' with qty {qty}")
         await ctx.info(f"Created item '{code}' with qty {qty}")
         return {"action": "create", "code": code, "qty": qty}

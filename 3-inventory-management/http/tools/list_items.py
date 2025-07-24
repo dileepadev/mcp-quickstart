@@ -1,3 +1,4 @@
+import logging
 from fastmcp import Context
 from tools.state import inventory
 
@@ -10,6 +11,8 @@ def register(mcp):
         Returns:
             dict: All inventory items sorted by name.
         """
+
+        logging.info("🛠️ Tool called: list_items")
         await ctx.info("🛠️ Tool called: list_items")
         inv = dict(sorted(inventory.items()))
         return {"action": "list", "inventory": inv}

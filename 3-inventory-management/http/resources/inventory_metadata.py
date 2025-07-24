@@ -1,3 +1,4 @@
+import logging
 from fastmcp import Context
 from tools.state import inventory
 from datetime import datetime
@@ -15,6 +16,7 @@ def register(mcp):
         Returns:
             dict: Metadata including total items, total quantity, last updated timestamp.
         """
+        logging.info("📊 Resource called: get_inventory_metadata")
         await ctx.info("📊 Resource called: get_inventory_metadata")
         return {
             "updated_by": "Admin",

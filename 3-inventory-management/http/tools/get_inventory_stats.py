@@ -1,3 +1,4 @@
+import logging
 from fastmcp import Context
 from tools.state import inventory
 
@@ -10,6 +11,7 @@ def register(mcp):
         Returns:
             dict: Total number of items and total quantity.
         """
+        logging.info("🛠️ Tool called: get_inventory_stats")
         await ctx.info("🛠️ Tool called: get_inventory_stats")
         total_items = len(inventory)
         total_qty = sum(inventory.values())
