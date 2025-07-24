@@ -1,12 +1,7 @@
 import sys
 import logging
 from fastmcp import FastMCP
-import tools.create_item as t1
-import tools.read_item as t2
-import tools.update_item as t3
-import tools.delete_item as t4
-import tools.list_items as t5
-import tools.get_inventory_stats as t6
+import tools
 import resources
 
 logging.basicConfig(
@@ -19,12 +14,7 @@ mcp = FastMCP("Inventory Management MCP Server")
 logging.info("🚀 Server initialized")
 
 
-t1.register(mcp)
-t2.register(mcp)
-t3.register(mcp)
-t4.register(mcp)
-t5.register(mcp)
-t6.register(mcp)
+tools.register_all(mcp)
 resources.register_all(mcp)
 
 
