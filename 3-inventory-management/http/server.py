@@ -3,6 +3,7 @@ import logging
 from fastmcp import FastMCP
 import tools
 import resources
+import prompts
 
 logging.basicConfig(
     level=logging.INFO,
@@ -16,6 +17,7 @@ logging.info("🚀 Server initialized")
 
 tools.register_all(mcp)
 resources.register_all(mcp)
+prompts.register_all(mcp)
 
 
 if __name__ == "__main__":
